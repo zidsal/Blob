@@ -1,0 +1,4 @@
+<Modules>
+  <Module PersistentId="BD6CFB83-531A-4559-9EEA-509EC129F5BF" ModuleId="Game" />
+  <Module PersistentId="CCCE8174-1D4D-41D8-B62C-93F75FF01AA2" ModuleId="Tests" />
+</Modules>

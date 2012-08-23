@@ -1,0 +1,10 @@
+c:\users\adam\documents\visual studio 2010\Projects\Game\Tests\bin\Debug\Tests.dll
+c:\users\adam\documents\visual studio 2010\Projects\Game\Tests\bin\Debug\Tests.pdb
+c:\users\adam\documents\visual studio 2010\Projects\Game\Tests\bin\Debug\Game.exe
+c:\users\adam\documents\visual studio 2010\Projects\Game\Tests\bin\Debug\Machine.Specifications.Clr4.dll
+c:\users\adam\documents\visual studio 2010\Projects\Game\Tests\bin\Debug\Machine.Specifications.dll
+c:\users\adam\documents\visual studio 2010\Projects\Game\Tests\bin\Debug\Game.pdb
+c:\users\adam\documents\visual studio 2010\Projects\Game\Tests\obj\Debug\ResolveAssemblyReference.cache
+c:\users\adam\documents\visual studio 2010\Projects\Game\Tests\obj\Debug\Tests.dll
+c:\users\adam\documents\visual studio 2010\Projects\Game\Tests\obj\Debug\Tests.pdb
+c:\users\adam\documents\visual studio 2010\Projects\Game\Tests\bin\Debug\Content\player.xnb
