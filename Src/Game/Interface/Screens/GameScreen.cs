@@ -1,5 +1,4 @@
-﻿using System;
-using Game.Entities;
+﻿using Game.Entities;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;

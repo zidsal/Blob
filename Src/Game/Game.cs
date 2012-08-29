@@ -57,8 +57,11 @@ namespace Game
 
         private void CreateGameSettings()
         {
+            //set the width and height of the game screen to our pref size
             _graphics.PreferredBackBufferWidth = (int)GameData.ScreenSize.X;
             _graphics.PreferredBackBufferHeight = (int)GameData.ScreenSize.Y;
+
+            //make the mouse cursor be visible
             IsMouseVisible = true;
         }
     }

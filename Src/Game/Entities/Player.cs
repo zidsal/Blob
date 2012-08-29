@@ -1,5 +1,4 @@
 ﻿using System;
-using Game.Graphics;
 using Game.Graphics.Sprites;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;

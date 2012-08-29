@@ -13,7 +13,7 @@ namespace Game.Entities
         }
 
         public virtual void Update(GameTime gameTime) { }
-
+        
         public void MoveRight(float amount)
         {
             var adjustment = new Vector2 {X = amount};

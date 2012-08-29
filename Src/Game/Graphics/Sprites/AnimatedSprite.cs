@@ -6,8 +6,8 @@ namespace Game.Graphics.Sprites
     public class AnimatedSprite : ISprite
     {
         private readonly Texture2D _spriteTexture;
-        private readonly int _maxFrame = 0;
-        private readonly int _startFrame = 0;
+        private readonly int _maxFrame;
+        private readonly int _startFrame;
 
         public AnimatedSprite(Texture2D texture,int startFrame, int maxFrame)
         {
@@ -19,7 +19,7 @@ namespace Game.Graphics.Sprites
             if(startFrame > maxFrame)
             {
                 //TODO ADD LOGGER
-                startFrame = maxFrame;
+                _startFrame = _maxFrame;
             }
             
         }
