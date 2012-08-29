@@ -11,6 +11,10 @@ namespace Game.Interface.Controls
         private readonly Vector2 _textCenter = Vector2.One;
         private readonly string _text;
 
+        //for onclick stuff
+        public delegate void OnClick();
+        public event OnClick OnClickEvent;
+
         public Button(Rectangle location, Texture2D texture, SpriteFont font, string text = "")
         {
             _location = location;
@@ -32,5 +36,15 @@ namespace Game.Interface.Controls
                 spriteBatch.DrawString(_font, _text, _textCenter, Color.Black);
             spriteBatch.End();
         }
+
+        public void PressButton()
+        {
+            if(OnClickEvent != null)
+            {
+                OnClickEvent();
+            }
+        }
+
     }
+
 }

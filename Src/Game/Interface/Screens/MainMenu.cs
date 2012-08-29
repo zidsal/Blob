@@ -1,4 +1,5 @@
-﻿using Game.Interface.Controls;
+﻿using System;
+using Game.Interface.Controls;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -22,10 +23,14 @@ namespace Game.Interface.Screens
             _buttons[1] = new Button(new Rectangle(450, 150, 120, 20), buttonImg, font, "Options");
             _buttons[2] = new Button(new Rectangle(10,10,120,120),buttonImg,font,"Quit");
 
+            //add what to do if someone clicks the button
+            _buttons[0].OnClickEvent += Play;
+
         }
 
         public void Update(GameTime gameTime)
         {
+            _buttons[0].PressButton();
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -34,6 +39,11 @@ namespace Game.Interface.Screens
             {
                 btn.Draw(spriteBatch);
             }
+        }
+
+        static private void Play()
+        {
+            Console.WriteLine("test");
         }
     }
 }
