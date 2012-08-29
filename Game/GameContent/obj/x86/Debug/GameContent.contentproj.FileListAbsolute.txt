@@ -1,2 +1,0 @@
-C:\Users\Adam\documents\visual studio 2010\Projects\Game\Game\GameContent\obj\x86\Debug\ResolveAssemblyReference.cache
-D:\Dev\game\Game\GameContent\obj\x86\Debug\ResolveAssemblyReference.cache
