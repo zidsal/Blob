@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>c:\users\adam\documents\visual studio 2010\Projects\Game\Game\Game\bin\x86\Debug\Content\player.xnb</Output>
-      <Time>2012-08-18T23:47:25.5488159+01:00</Time>
+      <Output>D:\Dev\game\Game\Game\bin\x86\Debug\Content\player.xnb</Output>
+      <Time>2012-08-29T11:13:37.8534587+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -16,10 +16,10 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>c:\users\adam\documents\visual studio 2010\Projects\Game\Game\GameContent\</RootDirectory>
-      <LoggerRootDirectory>c:\users\adam\documents\visual studio 2010\Projects\Game\Game\Game\</LoggerRootDirectory>
-      <IntermediateDirectory>c:\users\adam\documents\visual studio 2010\Projects\Game\Game\GameContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>c:\users\adam\documents\visual studio 2010\Projects\Game\Game\Game\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>D:\Dev\game\Game\GameContent\</RootDirectory>
+      <LoggerRootDirectory>D:\Dev\game\Game\Game\</LoggerRootDirectory>
+      <IntermediateDirectory>D:\Dev\game\Game\GameContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>D:\Dev\game\Game\Game\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
@@ -48,7 +48,7 @@
       </Assembly>
       <Assembly>
         <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2012-08-18T12:41:18.7647594+01:00</Value>
+        <Value>2012-08-29T11:10:10.0184587+01:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

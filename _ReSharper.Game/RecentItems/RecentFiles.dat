@@ -2,28 +2,50 @@
   <RecentFiles>
     <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/d:Graphics/d:Sprites/f:ISprite.cs" caret="304" fromTop="8" />
     <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/d:Entities/f:IEntity.cs" caret="0" fromTop="0" />
-    <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/d:Entities/f:ICharacter.cs" caret="328" fromTop="13" />
-    <File id="7020124F-9FFC-4AC3-8F3D-AAB8E0240759/f:DemoGame.Client.csproj/l:..?..?..?..?Downloads?NetGore?DemoGame.Client?DemoGame.Client.csproj" caret="0" fromTop="0" />
-    <File id="7020124F-9FFC-4AC3-8F3D-AAB8E0240759/f:DemoGame.GUITester.csproj/l:..?..?..?..?Downloads?NetGore?DemoGame.GUITester?DemoGame.GUITester.csproj" caret="0" fromTop="0" />
     <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/f:GameData.cs" caret="288" fromTop="9" />
     <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/d:Graphics/d:Sprites/f:Sprite.cs" caret="308" fromTop="12" />
     <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/d:Graphics/d:Sprites/f:AnimatedSprite.cs" caret="255" fromTop="0" />
     <File id="CCCE8174-1D4D-41D8-B62C-93F75FF01AA2/d:Graphics/d:Sprites/f:WhenAnimatedSpriteFrameIncreases.cs" caret="695" fromTop="20" />
     <File id="CCCE8174-1D4D-41D8-B62C-93F75FF01AA2/d:Entities/f:WhenCharacterIsLoaded.cs" caret="159" fromTop="8" />
     <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/d:Entities/f:Character.cs" caret="579" fromTop="21" />
-    <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/d:Entities/f:Player.cs" caret="1180" fromTop="36" />
-    <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/f:Game.cs" caret="912" fromTop="0" />
+    <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/f:Program.cs" caret="143" fromTop="6" />
+    <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/d:Interface/d:Screens/f:ScreenManager.cs" caret="260" fromTop="9" />
+    <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/f:Game.cs" caret="1844" fromTop="24" />
+    <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/d:Interface/d:Screens/f:IScreen.cs" caret="237" fromTop="8" />
+    <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/d:Interface/d:Screens/f:MainMenu.cs" caret="498" fromTop="18" />
+    <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/d:Interface/d:Screens/f:GameScreen.cs" caret="292" fromTop="11" />
+    <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/d:Entities/f:Player.cs" caret="685" fromTop="22" />
   </RecentFiles>
   <RecentEdits>
-    <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/d:Graphics/d:Sprites/f:ISprite.cs" caret="304" fromTop="8" />
-    <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/d:Graphics/d:Sprites/f:Sprite.cs" caret="719" fromTop="21" />
-    <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/f:GameData.cs" caret="304" fromTop="9" />
-    <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/d:Entities/f:ICharacter.cs" caret="328" fromTop="13" />
-    <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/f:Game.cs" caret="2550" fromTop="36" />
+    <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/f:Game.cs" caret="2681" fromTop="36" />
     <File id="CCCE8174-1D4D-41D8-B62C-93F75FF01AA2/d:Entities/f:WhenCharacterIsLoaded.cs" caret="183" fromTop="8" />
     <File id="CCCE8174-1D4D-41D8-B62C-93F75FF01AA2/d:Graphics/d:Sprites/f:WhenAnimatedSpriteFrameIncreases.cs" caret="695" fromTop="20" />
     <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/d:Graphics/d:Sprites/f:AnimatedSprite.cs" caret="633" fromTop="20" />
     <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/d:Entities/f:Character.cs" caret="579" fromTop="21" />
-    <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/d:Entities/f:Player.cs" caret="1013" fromTop="20" />
+    <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/d:Entities/f:Player.cs" caret="1122" fromTop="20" />
+    <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/f:Game.cs" caret="0" fromTop="0" />
+    <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/d:Interface/d:Screens/f:ScreenManager.cs" caret="641" fromTop="6" />
+    <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/d:Interface/d:Screens/f:IScreen.cs" caret="317" fromTop="10" />
+    <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/d:Interface/d:Screens/f:ScreenManager.cs" caret="607" fromTop="19" />
+    <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/d:Interface/d:Screens/f:ScreenManager.cs" caret="452" fromTop="13" />
+    <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/d:Interface/d:Screens/f:ScreenManager.cs" caret="398" fromTop="11" />
+    <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/f:Game.cs" caret="599" fromTop="14" />
+    <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/f:Game.cs" caret="1283" fromTop="29" />
+    <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/d:Interface/d:Screens/f:ScreenManager.cs" caret="310" fromTop="11" />
+    <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/d:Interface/d:Screens/f:MainMenu.cs" caret="196" fromTop="8" />
+    <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/d:Entities/f:Player.cs" caret="986" fromTop="12" />
+    <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/d:Interface/d:Screens/f:MainMenu.cs" caret="196" fromTop="14" />
+    <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/d:Interface/d:Screens/f:GameScreen.cs" caret="13" fromTop="0" />
+    <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/f:Program.cs" caret="290" fromTop="12" />
+    <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/d:Interface/d:Screens/f:GameScreen.cs" caret="405" fromTop="12" />
+    <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/d:Interface/d:Screens/f:MainMenu.cs" caret="194" fromTop="12" />
+    <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/f:Game.cs" caret="2491" fromTop="16" />
+    <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/f:Game.cs" caret="3032" fromTop="32" />
+    <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/f:Game.cs" caret="424" fromTop="15" />
+    <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/f:Game.cs" caret="1844" fromTop="24" />
+    <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/d:Interface/d:Screens/f:GameScreen.cs" caret="298" fromTop="11" />
+    <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/d:Interface/d:Screens/f:IScreen.cs" caret="237" fromTop="8" />
+    <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/d:Interface/d:Screens/f:MainMenu.cs" caret="173" fromTop="6" />
+    <File id="BD6CFB83-531A-4559-9EEA-509EC129F5BF/d:Entities/f:Player.cs" caret="685" fromTop="22" />
   </RecentEdits>
 </RecentFiles>

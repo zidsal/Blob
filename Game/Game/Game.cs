@@ -1,6 +1,8 @@
 using Game.Entities;
 using Game.Interface;
+using Game.Interface.Screens;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -13,13 +15,14 @@ namespace Game
     {
         readonly GraphicsDeviceManager _graphics;
         SpriteBatch _spriteBatch;
-        private readonly Player _player = new Player("zidsal", 0, Vector2.One);
         private  InputManager _input;
+        private ScreenManager _screenmanager;
 
         public Game()
         {
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            
         }
 
         /// <summary>
@@ -32,8 +35,8 @@ namespace Game
         {
             _graphics.PreferredBackBufferWidth = (int)GameData.ScreenSize.X;
             _graphics.PreferredBackBufferHeight = (int)GameData.ScreenSize.Y;
+            _screenmanager = ScreenManager.Instance(Content);
             IsMouseVisible = true;
-            _input = new InputManager(_player);
 
             base.Initialize();
         }
@@ -46,8 +49,6 @@ namespace Game
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             _spriteBatch = new SpriteBatch(GraphicsDevice);
-
-            _player.Initialize(Content.Load<Texture2D>("player")); 
         }
 
         /// <summary>
@@ -66,8 +67,9 @@ namespace Game
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            _input.Update(Keyboard.GetState());
-            _player.Update(gameTime);
+            //_input.Update(Keyboard.GetState());
+            //_player.Update(gameTime);
+            _screenmanager.GetScreen().Update(gameTime);
 
             base.Update(gameTime);
         }
@@ -80,8 +82,8 @@ namespace Game
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            _spriteBatch.Begin(); 
-                _player.Draw(_spriteBatch);
+            _spriteBatch.Begin();
+            _screenmanager.GetScreen().Draw(_spriteBatch);
             _spriteBatch.End();
 
             base.Draw(gameTime);

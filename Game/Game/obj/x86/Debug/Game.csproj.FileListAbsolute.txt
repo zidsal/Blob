@@ -6,3 +6,11 @@ c:\users\adam\documents\visual studio 2010\Projects\Game\Game\Game\obj\x86\Debug
 c:\users\adam\documents\visual studio 2010\Projects\Game\Game\Game\obj\x86\Debug\Game.pdb
 c:\users\adam\documents\visual studio 2010\Projects\Game\Game\Game\bin\x86\Debug\Content\player.xnb
 C:\Users\Adam\documents\visual studio 2010\Projects\Game\Game\Game\bin\x86\Debug\Game.exe.config
+D:\Dev\game\Game\Game\bin\x86\Debug\Content\player.xnb
+D:\Dev\game\Game\Game\bin\x86\Debug\Game.exe.config
+D:\Dev\game\Game\Game\bin\x86\Debug\Game.exe
+D:\Dev\game\Game\Game\bin\x86\Debug\Game.pdb
+D:\Dev\game\Game\Game\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Dev\game\Game\Game\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\Dev\game\Game\Game\obj\x86\Debug\Game.exe
+D:\Dev\game\Game\Game\obj\x86\Debug\Game.pdb

@@ -2,6 +2,7 @@
 using Game.Graphics;
 using Game.Graphics.Sprites;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Game.Entities
@@ -18,8 +19,9 @@ namespace Game.Entities
             Direction = GameData.DefaultDirection;
         }
 
-        public void Initialize(Texture2D texture)
+        public void Initialize(ContentManager content)
         {
+            var texture = content.Load<Texture2D>("player");
             _sprite = new AnimatedSprite(texture,0, 2);
         }
 
