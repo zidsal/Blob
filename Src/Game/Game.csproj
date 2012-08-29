@@ -119,6 +119,7 @@
     <Compile Include="Graphics\Sprites\ISprite.cs" />
     <Compile Include="Graphics\Sprites\Sprite.cs" />
     <Compile Include="Interface\Controls\Button.cs" />
+    <Compile Include="Interface\Controls\IControl.cs" />
     <Compile Include="Interface\InputManager.cs" />
     <Compile Include="Interface\KeyBinds.Designer.cs">
       <AutoGen>True</AutoGen>
