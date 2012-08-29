@@ -20,6 +20,7 @@
 *.sdf
 *.opensdf
 *.unsuccessfulbuild
+*.csproj.Debug.cachefile
 ipch/
 obj/
 [Bb]in
