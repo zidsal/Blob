@@ -1,5 +1,7 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 
 namespace Game.Interface.Controls
 {
@@ -14,6 +16,9 @@ namespace Game.Interface.Controls
         //for onclick stuff
         public delegate void OnClick();
         public event OnClick OnClickEvent;
+        private MouseState _currentMouseState;
+        private MouseState _prevMouseState;
+        
 
         public Button(Rectangle location, Texture2D texture, SpriteFont font, string text = "")
         {
@@ -23,7 +28,7 @@ namespace Game.Interface.Controls
             _text = text;
 
             _textCenter = new Vector2(_location.X + _location.Width/2 - _font.MeasureString(_text).X /2,
-                                       _location.Y + _location.Height / 2 - _font.MeasureString(_text).Y / 2);
+                                      _location.Y + _location.Height / 2 - _font.MeasureString(_text).Y / 2);
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -37,6 +42,21 @@ namespace Game.Interface.Controls
             spriteBatch.End();
         }
 
+        public void Update(GameTime time)
+        {
+            _currentMouseState = Mouse.GetState();
+
+            if (_currentMouseState.LeftButton == ButtonState.Released && _prevMouseState.LeftButton == ButtonState.Pressed)
+            {
+                if (_location.Contains(_currentMouseState.X, _currentMouseState.Y))
+                {
+                    PressButton();
+                }
+            }
+
+            _prevMouseState = _currentMouseState;
+        }
+
         public void PressButton()
         {
             if(OnClickEvent != null)
@@ -46,5 +66,4 @@ namespace Game.Interface.Controls
         }
 
     }
-
 }

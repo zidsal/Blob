@@ -30,7 +30,10 @@ namespace Game.Interface.Screens
 
         public void Update(GameTime gameTime)
         {
-            _buttons[0].PressButton();
+            foreach (var btn in _buttons)
+            {
+                btn.Update(gameTime);
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch)
