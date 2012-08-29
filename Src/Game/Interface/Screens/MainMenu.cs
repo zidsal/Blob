@@ -26,7 +26,6 @@ namespace Game.Interface.Screens
 
         public void Update(GameTime gameTime)
         {
-            //throw new System.NotImplementedException();
         }
 
         public void Draw(SpriteBatch spriteBatch)
