@@ -17,6 +17,12 @@ namespace Game.Interface.Controls
         private KeyboardState _currentKeyBoardState;
         private KeyboardState _prevKeyBoardState;
 
+        //refactor
+        public delegate void Click();
+        public event Click OnClickEvent;
+        private MouseState _currentMouseState;
+        private MouseState _prevMouseState;
+
         public TextBox(Texture2D texture, Rectangle position, SpriteFont font, Color color)
         {
             _texture = texture;
@@ -24,6 +30,7 @@ namespace Game.Interface.Controls
             _font = font;
             _color = color;
             _position = position;
+            HasFocus = false;
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -40,10 +47,20 @@ namespace Game.Interface.Controls
         public void Update(GameTime time)
         {
             _currentKeyBoardState = Keyboard.GetState();
+            _currentMouseState = Mouse.GetState();
 
             var shift = _currentKeyBoardState.IsKeyDown(Keys.LeftShift) || _currentKeyBoardState.IsKeyDown(Keys.RightShift);
 
-            foreach (var key in _currentKeyBoardState.GetPressedKeys().Where(key => _prevKeyBoardState.IsKeyUp(key))) //for each key the user is currently holding down
+            if (_currentMouseState.LeftButton == ButtonState.Released && _prevMouseState.LeftButton == ButtonState.Pressed)
+            {
+                if (_position.Contains(_currentMouseState.X, _currentMouseState.Y))
+                {
+                    OnClick();
+                }
+            }
+
+
+            foreach (var key in _currentKeyBoardState.GetPressedKeys().Where(key => _prevKeyBoardState.IsKeyUp(key)).TakeWhile(key => HasFocus))
             {
                 if (key == Keys.Space)
                 {
@@ -55,19 +72,18 @@ namespace Game.Interface.Controls
                 }
                 else //key codes are in ascii so work them out
                 {
-                    if(shift == false)
+                    if (shift == false)
                     {
-                        if ((int)key >= 65 && (int)key <= 90)
+                        if ((int) key >= 65 && (int) key <= 90)
                         {
-                            _text += ConvertFromAsciiToChar((int)key + 32); //little ascii trick atm key codes are in upper case add + 32 to get them to lower case
+                            _text += ConvertFromAsciiToChar((int) key + 32); //little ascii trick atm key codes are in upper case add + 32 to get them to lower case
                         }
 
-                        else if ((int)key >= 48 && (int)key <= 75)
+                        else if ((int) key >= 48 && (int) key <= 75)
                         {
-                            _text += ConvertFromAsciiToChar((int)key); //numbers are fine
+                            _text += ConvertFromAsciiToChar((int) key); //numbers are fine
                         }
                     }
-
                     else
                     {
                         if ((int)key >= 65 && (int)key <= 90)
@@ -84,18 +100,24 @@ namespace Game.Interface.Controls
                 }
             }
             _prevKeyBoardState = _currentKeyBoardState;
+            _prevMouseState = _currentMouseState;
         }
 
         public void OnClick()
         {
-            throw new NotImplementedException();
+            if (OnClickEvent != null)
+            {
+                OnClickEvent();
+            }
+
+            HasFocus = true;
         }
 
-        private char ConvertFromAsciiToChar(int ascii)
+        private static char ConvertFromAsciiToChar(int ascii)
         {
             return Convert.ToChar(ascii);
         }
 
-        public bool HasFocus {get; private set;}
+        public bool HasFocus {get; set;}
     }
 }

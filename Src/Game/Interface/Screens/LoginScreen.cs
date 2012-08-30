@@ -41,6 +41,10 @@ namespace Game.Interface.Screens
             _buttons[0].OnClickEvent += MainMenu;
             _buttons[1].OnClickEvent += Play;
 
+            foreach(var t in _textBox)
+            {
+                t.OnClickEvent += Focus;
+            }
         }
 
         public void Update(GameTime gameTime)
@@ -81,7 +85,10 @@ namespace Game.Interface.Screens
 
         private void Focus()
         {
-
+            foreach (var txtBox in _textBox)
+            {
+                txtBox.HasFocus = false;
+            }
         }
     }
 }
