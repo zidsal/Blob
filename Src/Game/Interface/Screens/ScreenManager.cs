@@ -9,7 +9,7 @@ namespace Game.Interface.Screens
 
         private ScreenManager(Game game)
         {
-            _screen = new MainMenu(game);
+            _screen = new MainMenu(game, this);
         }
 
         public void SwapScreen(IScreen screen)

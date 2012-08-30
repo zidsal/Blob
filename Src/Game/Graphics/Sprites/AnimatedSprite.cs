@@ -26,7 +26,9 @@ namespace Game.Graphics.Sprites
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location,Rectangle part, float size)
         {
-            spriteBatch.Draw(_spriteTexture, location, part, Color.White, 0f, Vector2.Zero, size, SpriteEffects.None, 0f);
+            spriteBatch.Begin();
+                spriteBatch.Draw(_spriteTexture, location, part, Color.White, 0f, Vector2.Zero, size, SpriteEffects.None, 0f);
+            spriteBatch.End();
         }
 
         public void IncrementFrame()

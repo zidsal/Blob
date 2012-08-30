@@ -8,12 +8,21 @@ namespace Game.Interface.Screens
 {
     public class MainMenu : IScreen
     {
-        private readonly Button[] _buttons = new Button[3];
+        private Button[] _buttons;
+        private static readonly string[] _btnName = {"Login", "Register", "Options", "Exit"};
         private readonly Game _game;
+        private readonly ScreenManager _screen;
 
-        public MainMenu(Game game)
+        private const int BtnWidth = 80;
+        private const int BtnHeight = 50;
+        private const int BtnSpacing = 20;
+        private Vector2 _btnCenter = new Vector2(GameData.ScreenSize.X / 2 - ((BtnWidth * _btnName.Length/2) + (BtnSpacing * _btnName.Length/2) + BtnWidth + BtnSpacing), 
+                                                    GameData.ScreenSize.Y / 2 - BtnHeight / 2);
+
+        public MainMenu(Game game, ScreenManager screen)
         {
             _game = game;
+            _screen = screen;
             Initialize(_game.Content);
         }
 
@@ -22,13 +31,18 @@ namespace Game.Interface.Screens
             var font = content.Load<SpriteFont>("CourierNew");
             var buttonImg = content.Load<Texture2D>("Button");
 
-            _buttons[0] = new Button(new Rectangle(150,150, 80,20), buttonImg, font, "Play");
-            _buttons[1] = new Button(new Rectangle(450, 150, 120, 20), buttonImg, font, "Options");
-            _buttons[2] = new Button(new Rectangle(10,10,120,120),buttonImg,font,"Quit");
+            _buttons = new Button[_btnName.Length];
+
+            for(int i = 0; i < _buttons.Length; i++)
+            {
+                _buttons[i] = new Button(new Rectangle((int)_btnCenter.X + (i * BtnWidth) + (i * BtnSpacing), (int)_btnCenter.Y, 
+                                          BtnWidth, BtnHeight), buttonImg, font, _btnName[i]);
+            }
+
 
             //add what to do if someone clicks the button
             _buttons[0].OnClickEvent += Play;
-            _buttons[2].OnClickEvent += Quit;
+            _buttons[3].OnClickEvent += Quit;
 
         }
 
@@ -50,7 +64,7 @@ namespace Game.Interface.Screens
 
         private void Play()
         {
-            Console.WriteLine("test");
+            _screen.SwapScreen(new GameScreen(_game,_screen));
         }
 
         private void Quit()
