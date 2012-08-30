@@ -12,7 +12,7 @@ namespace Game.Interface.Screens
         private static readonly string[] BtnName = {"Login", "Register", "Options", "Exit"};
         private readonly Game _game;
         private readonly ScreenManager _screen;
-        private readonly NewsReader news = new NewsReader();
+        private readonly NewsReader _news = new NewsReader();
 
         private readonly Label[] _label = new Label[2];
 
@@ -44,8 +44,8 @@ namespace Game.Interface.Screens
                                           BtnWidth, BtnHeight), buttonImg, font, BtnName[i]);
             }
 
-            _label[0] = new Label(news.ReadTitle(), new Vector2(10, 10), font, Color.Red);
-            _label[1] = new Label(news.ReadNews(), new Vector2(10, 40), font, Color.Black);
+            _label[0] = new Label(_news.ReadTitle(), new Vector2(10, 10), font, Color.Red, GameData.ScreenSize.X - 250);
+            _label[1] = new Label(_news.ReadNews(), new Vector2(10, 40), font, Color.Black, GameData.ScreenSize.X - 250);
 
 
             //add what to do if someone clicks the button

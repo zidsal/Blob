@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Game.Interface.Controls
@@ -9,15 +10,17 @@ namespace Game.Interface.Controls
         private readonly Vector2 _position;
         private readonly SpriteFont _font;
         private readonly Color _color;
+        private readonly float _width;
 
-        public Label(string text, Vector2 position, SpriteFont font, Color color, bool wordWrap = true)
+        public Label(string text, Vector2 position, SpriteFont font, Color color, float width)
         {
             _text = text;
             _position = position;
             _font = font;
             _color = color;
+            _width = width;
 
-            if (wordWrap && font.MeasureString(_text).X > GameData.ScreenSize.X - 250)
+            if (font.MeasureString(_text).X > _width)
             {
                 _text = WordWarp(_text, _font);
             }
@@ -39,28 +42,25 @@ namespace Game.Interface.Controls
             throw new System.NotImplementedException();
         }
 
-        private static string WordWarp(string text, SpriteFont font)
+        private string WordWarp(string text, SpriteFont font)
         {
-            var currentLine = "";
-            var textWithSpacing = "";
+            String line = String.Empty;
+            String returnString = String.Empty;
+            String[] wordArray = text.Split(' ');
 
-            foreach (var c in text)
+            foreach (String word in wordArray)
             {
-                currentLine += c;
-                float currentLineSize = font.MeasureString(currentLine).X;
+                if (font.MeasureString(line + word).Length() > _width)
+                {
+                    returnString = returnString + line + '\n';
+                    line = String.Empty;
+                }
 
-                if (currentLineSize >= GameData.ScreenSize.X - 250)
-                {
-                    textWithSpacing += "\n";
-                    currentLine = string.Empty;
-                }
-                else
-                {
-                    textWithSpacing += c;
-                }
+                line = line + word + ' ';
             }
 
-            return textWithSpacing;
+            return returnString + line;
         }
+
     }
 }
