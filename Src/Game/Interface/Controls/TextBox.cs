@@ -118,6 +118,16 @@ namespace Game.Interface.Controls
             return Convert.ToChar(ascii);
         }
 
-        public bool HasFocus {get; set;}
+        public string GetText()
+        {
+            return _text;
+        }
+
+        public void RemoveFocus()
+        {
+            HasFocus = false;
+        }
+
+        public bool HasFocus {get; private set;}
     }
 }

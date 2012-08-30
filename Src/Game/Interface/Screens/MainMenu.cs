@@ -47,11 +47,13 @@ namespace Game.Interface.Screens
             _label[0] = new Label(_news.ReadTitle(), new Vector2(10, 10), font, Color.Red, GameData.ScreenSize.X - 250);
             _label[1] = new Label(_news.ReadNews(), new Vector2(10, 40), font, Color.Black, GameData.ScreenSize.X - 250);
 
+            AddEventListernToControl();
+        }
 
-            //add what to do if someone clicks the button
+        private void AddEventListernToControl()
+        {
             _buttons[0].OnClickEvent += Login;
             _buttons[3].OnClickEvent += _game.Exit;
-
         }
 
         public void Update(GameTime gameTime)

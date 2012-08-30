@@ -9,9 +9,11 @@ namespace Game.Interface.Screens
     {
         private readonly Game _game;
         private readonly ScreenManager _screen;
-        private TextBox[] _textBox = new TextBox[2];
+        private readonly TextBox[] _textBox = new TextBox[2];
         private Button[] _buttons;
+        private Label[] _label;
         private static readonly string[] BtnName = { "Back", "Login"};
+        private static readonly string[] LblName = { "Login: ", "Password: "};
 
         public LoginScreen(Game game, ScreenManager screen)
         {
@@ -28,20 +30,31 @@ namespace Game.Interface.Screens
 
             for (var i = 0; i < _textBox.Length; i++)
             {
-                _textBox[i] = new TextBox(textBoxImg, new Rectangle(10, i * 30 + 10, 250, 20), font,Color.Black);
+                _textBox[i] = new TextBox(textBoxImg, new Rectangle(100, i * 30 + 150, 250, 20), font,Color.Black);
+            }
+
+            _label = new Label[LblName.Length];
+            for (var i = 0; i < _label.Length; i++)
+            {
+                _label[i] = new Label(LblName[i], new Vector2(10, i * 30 +  125), font, Color.Black, 20);
             }
 
             _buttons = new Button[BtnName.Length];
 
             for (var i = 0; i < _buttons.Length; i++)
             {
-                _buttons[i] = new Button(new Rectangle(100 * i + 10, _textBox.Length * 30 + 10, 80, 20), textBoxImg, font, BtnName[i]);
+                _buttons[i] = new Button(new Rectangle(100 * i + 100, _textBox.Length * 30 + 150, 80, 20), textBoxImg, font, BtnName[i]);
             }
 
+            AddEventListernToControl();
+        }
+
+        private void AddEventListernToControl()
+        {
             _buttons[0].OnClickEvent += MainMenu;
             _buttons[1].OnClickEvent += Play;
 
-            foreach(var t in _textBox)
+            foreach (var t in _textBox)
             {
                 t.OnClickEvent += Focus;
             }
@@ -52,6 +65,11 @@ namespace Game.Interface.Screens
             foreach (var txtBox in _textBox)
             {
                 txtBox.Update(gameTime);
+            }
+
+            foreach (var lbl in _label)
+            {
+                lbl.Update(gameTime);
             }
 
             foreach (var btn in _buttons)
@@ -65,6 +83,11 @@ namespace Game.Interface.Screens
             foreach (var txtBox in _textBox)
             {
                 txtBox.Draw(spriteBatch);
+            }
+
+            foreach (var lbl in _label)
+            {
+                lbl.Draw(spriteBatch);
             }
 
             foreach (var btn in _buttons)
@@ -87,7 +110,7 @@ namespace Game.Interface.Screens
         {
             foreach (var txtBox in _textBox)
             {
-                txtBox.HasFocus = false;
+                txtBox.RemoveFocus();
             }
         }
     }
