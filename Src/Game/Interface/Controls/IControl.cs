@@ -7,5 +7,6 @@ namespace Game.Interface.Controls
     {
         void Draw(SpriteBatch batch);
         void Update(GameTime time);
+        void OnClick();
     }
 }

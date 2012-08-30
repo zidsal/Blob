@@ -7,9 +7,9 @@ namespace Game.Interface.Screens
         private static ScreenManager _screenInstance;
         private IScreen _screen;
 
-        private ScreenManager(ContentManager content)
+        private ScreenManager(Game game)
         {
-            _screen = new MainMenu(content);
+            _screen = new MainMenu(game);
         }
 
         public void SwapScreen(IScreen screen)
@@ -22,9 +22,9 @@ namespace Game.Interface.Screens
             return _screen;
         }
 
-        public static ScreenManager Instance(ContentManager content)
+        public static ScreenManager Instance(Game game)
         {
-            return _screenInstance ?? (_screenInstance = new ScreenManager(content));
+            return _screenInstance ?? (_screenInstance = new ScreenManager(game));
         }
     }
 }

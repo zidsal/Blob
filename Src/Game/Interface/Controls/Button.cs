@@ -14,8 +14,8 @@ namespace Game.Interface.Controls
         private readonly string _text;
 
         //for onclick stuff
-        public delegate void OnClick();
-        public event OnClick OnClickEvent;
+        public delegate void Click();
+        public event Click OnClickEvent;
         private MouseState _currentMouseState;
         private MouseState _prevMouseState;
         
@@ -50,14 +50,14 @@ namespace Game.Interface.Controls
             {
                 if (_location.Contains(_currentMouseState.X, _currentMouseState.Y))
                 {
-                    PressButton();
+                    OnClick();
                 }
             }
 
             _prevMouseState = _currentMouseState;
         }
 
-        public void PressButton()
+        public void OnClick()
         {
             if(OnClickEvent != null)
             {

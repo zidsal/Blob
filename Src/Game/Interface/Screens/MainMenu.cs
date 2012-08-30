@@ -8,10 +8,13 @@ namespace Game.Interface.Screens
 {
     public class MainMenu : IScreen
     {
-        private Button[] _buttons = new Button[3];
-        public MainMenu(ContentManager content)
+        private readonly Button[] _buttons = new Button[3];
+        private readonly Game _game;
+
+        public MainMenu(Game game)
         {
-            Initialize(content);
+            _game = game;
+            Initialize(_game.Content);
         }
 
         public void Initialize(ContentManager content)
@@ -25,6 +28,7 @@ namespace Game.Interface.Screens
 
             //add what to do if someone clicks the button
             _buttons[0].OnClickEvent += Play;
+            _buttons[2].OnClickEvent += Quit;
 
         }
 
@@ -44,9 +48,14 @@ namespace Game.Interface.Screens
             }
         }
 
-        static private void Play()
+        private void Play()
         {
             Console.WriteLine("test");
+        }
+
+        private void Quit()
+        {
+            _game.Exit();
         }
     }
 }

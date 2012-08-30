@@ -27,7 +27,7 @@ namespace Game
         protected override void Initialize()
         {
             CreateGameSettings();
-            _screenmanager = ScreenManager.Instance(Content);
+            _screenmanager = ScreenManager.Instance(this);
 
             base.Initialize();
         }

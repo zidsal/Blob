@@ -8,10 +8,12 @@ namespace Game.Interface.Screens
     public class GameScreen : IScreen
     {
         private readonly Player _player = new Player("zidsal", 0, Vector2.One);
+        private readonly Game _game;
 
-        public GameScreen(ContentManager content)
+        public GameScreen(Game game)
         {
-            Initialize(content);
+            _game = game;
+            Initialize(_game.Content);
         }
 
         public void Initialize(ContentManager content)
