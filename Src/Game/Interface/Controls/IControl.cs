@@ -5,7 +5,7 @@ namespace Game.Interface.Controls
 {
     interface IControl
     {
-        void Draw(SpriteBatch batch);
+        void Draw(SpriteBatch spriteBatch);
         void Update(GameTime time);
         void OnClick();
     }
