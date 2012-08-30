@@ -49,7 +49,7 @@ namespace Game.Interface.Screens
 
 
             //add what to do if someone clicks the button
-            _buttons[0].OnClickEvent += Play;
+            _buttons[0].OnClickEvent += Login;
             _buttons[3].OnClickEvent += _game.Exit;
 
         }
@@ -81,9 +81,9 @@ namespace Game.Interface.Screens
             }
         }
 
-        private void Play()
+        private void Login()
         {
-            _screen.SwapScreen(new GameScreen(_game,_screen));
+            _screen.SwapScreen(new LoginScreen(_game,_screen));
         }
 
     }

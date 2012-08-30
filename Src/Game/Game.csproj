@@ -121,6 +121,7 @@
     <Compile Include="Interface\Controls\Button.cs" />
     <Compile Include="Interface\Controls\IControl.cs" />
     <Compile Include="Interface\Controls\Label.cs" />
+    <Compile Include="Interface\Controls\TextBox.cs" />
     <Compile Include="Interface\InputManager.cs" />
     <Compile Include="Interface\KeyBinds.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -130,6 +131,7 @@
     <Compile Include="Interface\NewsReader.cs" />
     <Compile Include="Interface\Screens\GameScreen.cs" />
     <Compile Include="Interface\Screens\IScreen.cs" />
+    <Compile Include="Interface\Screens\LoginScreen.cs" />
     <Compile Include="Interface\Screens\MainMenu.cs" />
     <Compile Include="Interface\Screens\ScreenManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

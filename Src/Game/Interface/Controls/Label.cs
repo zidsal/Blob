@@ -22,7 +22,7 @@ namespace Game.Interface.Controls
 
             if (font.MeasureString(_text).X > _width)
             {
-                _text = WordWarp(_text, _font);
+                _text = WordWarp(_text);
             }
         }
 
@@ -42,7 +42,7 @@ namespace Game.Interface.Controls
             throw new System.NotImplementedException();
         }
 
-        private string WordWarp(string text, SpriteFont font)
+        private string WordWarp(string text)
         {
             String line = String.Empty;
             String returnString = String.Empty;
@@ -50,7 +50,7 @@ namespace Game.Interface.Controls
 
             foreach (String word in wordArray)
             {
-                if (font.MeasureString(line + word).Length() > _width)
+                if (_font.MeasureString(line + word).Length() > _width)
                 {
                     returnString = returnString + line + '\n';
                     line = String.Empty;
