@@ -1,5 +1,6 @@
 ﻿using Game;
 using Game.Entities;
+using Game.World.Entities;
 using Machine.Specifications;
 using Microsoft.Xna.Framework;
 

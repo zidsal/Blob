@@ -15,6 +15,7 @@ namespace Game.Interface.Screens
         private static readonly string[] BtnName = { "Back", "Login"};
         private static readonly string[] LblName = { "Login: ", "Password: "};
 
+
         public LoginScreen(Game game, ScreenManager screen)
         {
             _game = game;

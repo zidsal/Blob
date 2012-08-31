@@ -1,16 +1,18 @@
-﻿using Game.Entities;
-using Game.Interface.Controls;
+﻿using Game.World;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 
 namespace Game.Interface.Screens
 {
     public class GameScreen : IScreen
     {
-        private readonly Player _player = new Player("zidsal", 0, Vector2.One);
         private readonly Game _game;
         private readonly ScreenManager _screen;
+        private readonly InputManager _input = new InputManager();
+        private readonly GameWorld _world = new GameWorld();
+        private SpriteFont _uiFont;
 
         public GameScreen(Game game, ScreenManager screen)
         {
@@ -21,21 +23,32 @@ namespace Game.Interface.Screens
 
         public void Initialize(ContentManager content)
         {
-            _player.Initialize(content); 
+            _uiFont = content.Load<SpriteFont>("CourierNew");
+            _world.Initialize(content);
         }
 
         public void Update(GameTime gameTime)
         {
+            _input.Update(Keyboard.GetState());
+            _world.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            _player.Draw(spriteBatch);
+            _world.Draw(spriteBatch);
+            spriteBatch.Begin();
+                spriteBatch.DrawString(_uiFont,"Fps: ",new Vector2(GameData.ScreenSize.X - 50,5),Color.Black);
+            spriteBatch.End();
         }
 
         private void Quit()
         {
             _screen.SwapScreen(new MainMenu(_game, _screen));
+        }
+
+        private void DrawUi()
+        {
+            
         }
     }
 }
