@@ -7,13 +7,11 @@ namespace Tests.Graphics.Sprites
     public class WhenAnimatedSpriteFrameIncreasesBeyoundMaximum
     {
         private static AnimatedSprite _entity;
-        private static Texture2D _fakeTexture;
         private const int StartFrame = 2;
 
         private Establish _context = () =>
         {
-            _fakeTexture = new Texture2D(null,0,0);
-            _entity = new AnimatedSprite(_fakeTexture, StartFrame, 2);
+            _entity = new AnimatedSprite(null, StartFrame, 2);
         };
 
         private Because _of = () => _entity.IncrementFrame();
