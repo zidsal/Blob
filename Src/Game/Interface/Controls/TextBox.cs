@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -23,11 +24,11 @@ namespace Game.Interface.Controls
         private MouseState _currentMouseState;
         private MouseState _prevMouseState;
 
-        public TextBox(Texture2D texture, Rectangle position, SpriteFont font, Color color)
+        public TextBox(Texture2D texture, Rectangle position, ContentManager content, Color color)
         {
             _texture = texture;
             _position = position;
-            _font = font;
+            _font = content.Load<SpriteFont>("ControlFont");
             _color = color;
             _position = position;
             HasFocus = false;

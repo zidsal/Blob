@@ -26,25 +26,24 @@ namespace Game.Interface.Screens
 
         public void Initialize(ContentManager content)
         {
-            var font = content.Load<SpriteFont>("CourierNew");
             var textBoxImg = content.Load<Texture2D>("Button");
 
             for (var i = 0; i < _textBox.Length; i++)
             {
-                _textBox[i] = new TextBox(textBoxImg, new Rectangle(100, i * 30 + 150, 250, 20), font,Color.Black);
+                _textBox[i] = new TextBox(textBoxImg, new Rectangle(100, i * 30 + 150, 250, 20), content,Color.Black);
             }
 
             _label = new Label[LblName.Length];
             for (var i = 0; i < _label.Length; i++)
             {
-                _label[i] = new Label(LblName[i], new Vector2(10, i * 30 +  125), font, Color.Black, 20);
+                _label[i] = new Label(LblName[i], new Vector2(10, i * 30 +  125), content, Color.Black, 20);
             }
 
             _buttons = new Button[BtnName.Length];
 
             for (var i = 0; i < _buttons.Length; i++)
             {
-                _buttons[i] = new Button(new Rectangle(100 * i + 100, _textBox.Length * 30 + 150, 80, 20), textBoxImg, font, BtnName[i]);
+                _buttons[i] = new Button(new Rectangle(100 * i + 100, _textBox.Length * 30 + 150, 80, 20), textBoxImg, content, BtnName[i]);
             }
 
             AddEventListernToControl();

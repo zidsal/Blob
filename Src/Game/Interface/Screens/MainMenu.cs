@@ -1,5 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Xml.Serialization;
 using Game.Interface.Controls;
+using Game.World.Entities;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -33,7 +37,6 @@ namespace Game.Interface.Screens
 
         public void Initialize(ContentManager content)
         {
-            var font = content.Load<SpriteFont>("CourierNew");
             var buttonImg = content.Load<Texture2D>("Button");
 
             _buttons = new Button[BtnName.Length];
@@ -41,11 +44,11 @@ namespace Game.Interface.Screens
             for(var i = 0; i < _buttons.Length; i++)
             {
                 _buttons[i] = new Button(new Rectangle((int)_btnCenter.X + (i * BtnWidth) + (i * BtnSpacing), (int)_btnCenter.Y, 
-                                          BtnWidth, BtnHeight), buttonImg, font, BtnName[i]);
+                                         BtnWidth, BtnHeight), buttonImg, content, BtnName[i]);
             }
 
-            _label[0] = new Label(_news.ReadTitle(), new Vector2(10, 10), font, Color.Red, GameData.ScreenSize.X - 250);
-            _label[1] = new Label(_news.ReadNews(), new Vector2(10, 40), font, Color.Black, GameData.ScreenSize.X - 250);
+            _label[0] = new Label(_news.ReadTitle(), new Vector2(10, 10), content, Color.Red, GameData.ScreenSize.X - 250);
+            _label[1] = new Label(_news.ReadNews(), new Vector2(10, 40), content, Color.Black, GameData.ScreenSize.X - 250);
 
             AddEventListernToControl();
         }

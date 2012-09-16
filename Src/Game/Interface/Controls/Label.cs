@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Game.Interface.Controls
@@ -12,15 +13,15 @@ namespace Game.Interface.Controls
         private readonly Color _color;
         private readonly float _width;
 
-        public Label(string text, Vector2 position, SpriteFont font, Color color, float width)
+        public Label(string text, Vector2 position, ContentManager content, Color color, float width)
         {
             _text = text;
             _position = position;
-            _font = font;
+            _font = content.Load<SpriteFont>("ControlFont");
             _color = color;
             _width = width;
 
-            if (font.MeasureString(_text).X > _width)
+            if (_font.MeasureString(_text).X > _width)
             {
                 _text = WordWarp(_text);
             }

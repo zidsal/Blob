@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -20,11 +21,11 @@ namespace Game.Interface.Controls
         private MouseState _prevMouseState;
         
 
-        public Button(Rectangle location, Texture2D texture, SpriteFont font, string text = "")
+        public Button(Rectangle location, Texture2D texture, ContentManager content, string text = "")
         {
             _location = location;
             _texture = texture;
-            _font = font;
+            _font = content.Load<SpriteFont>("ControlFont");
             _text = text;
 
             _textCenter = new Vector2(_location.X + _location.Width/2 - _font.MeasureString(_text).X /2,

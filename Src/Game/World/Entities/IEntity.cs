@@ -1,14 +1,14 @@
-﻿using System;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Graphics;
 
-namespace Game.Entities
+namespace Game.World.Entities
 {
-    public interface IEntity
+    interface IEntity
     {
-        String Name { get; }
-        int Id { get; }
-        Vector2 Location { get; }
-
+        void Initialize(ContentManager content);
+        void Draw(SpriteBatch spriteBatch);
+        void Update(GameTime gameTime);
+        void OnClick();
     }
 }
-
