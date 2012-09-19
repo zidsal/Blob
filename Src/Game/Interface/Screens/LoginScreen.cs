@@ -26,11 +26,9 @@ namespace Game.Interface.Screens
 
         public void Initialize(ContentManager content)
         {
-            var textBoxImg = content.Load<Texture2D>("Button");
-
             for (var i = 0; i < _textBox.Length; i++)
             {
-                _textBox[i] = new TextBox(textBoxImg, new Rectangle(100, i * 30 + 150, 250, 20), content,Color.Black);
+                _textBox[i] = new TextBox(new Rectangle(100, i * 30 + 150, 250, 20), content,Color.Black);
             }
 
             _label = new Label[LblName.Length];
@@ -43,7 +41,7 @@ namespace Game.Interface.Screens
 
             for (var i = 0; i < _buttons.Length; i++)
             {
-                _buttons[i] = new Button(new Rectangle(100 * i + 100, _textBox.Length * 30 + 150, 80, 20), textBoxImg, content, BtnName[i]);
+                _buttons[i] = new Button(new Rectangle(100 * i + 100, _textBox.Length * 30 + 150, 80, 20), content, BtnName[i]);
             }
 
             AddEventListernToControl();

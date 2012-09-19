@@ -56,8 +56,14 @@ namespace Game.Interface.Screens
 
         private void PlayerInteraction()
         {
-            _playerMenu.Visible = true;
+            if(_playerMenu.Visible)
+            {
+                _playerMenu.HideMenu();
+            }
+            else
+            {
+                _playerMenu.ShowMenu(0,0);
+            }
         }
-
     }
 }

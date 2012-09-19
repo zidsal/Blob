@@ -37,14 +37,12 @@ namespace Game.Interface.Screens
 
         public void Initialize(ContentManager content)
         {
-            var buttonImg = content.Load<Texture2D>("Button");
-
             _buttons = new Button[BtnName.Length];
 
             for(var i = 0; i < _buttons.Length; i++)
             {
                 _buttons[i] = new Button(new Rectangle((int)_btnCenter.X + (i * BtnWidth) + (i * BtnSpacing), (int)_btnCenter.Y, 
-                                         BtnWidth, BtnHeight), buttonImg, content, BtnName[i]);
+                                         BtnWidth, BtnHeight), content, BtnName[i]);
             }
 
             _label[0] = new Label(_news.ReadTitle(), new Vector2(10, 10), content, Color.Red, GameData.ScreenSize.X - 250);

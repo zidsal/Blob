@@ -21,10 +21,10 @@ namespace Game.Interface.Controls
         private MouseState _prevMouseState;
         
 
-        public Button(Rectangle location, Texture2D texture, ContentManager content, string text = "")
+        public Button(Rectangle location, ContentManager content, string text = "")
         {
             _location = location;
-            _texture = texture;
+            _texture = content.Load<Texture2D>("Button");
             _font = content.Load<SpriteFont>("ControlFont");
             _text = text;
 

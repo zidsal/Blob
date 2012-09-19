@@ -13,11 +13,13 @@ namespace Game.Interface.Screens.GameGui
     {
         private readonly SpriteFont _font;
         private readonly string[] _options;
+        private Texture2D _texture;
 
         public InteractionMenu(String[] options, ContentManager content)
         {
             _font = content.Load<SpriteFont>("InteractionMenu");
             _options = options;
+            _texture = content.Load<Texture2D>("Button");
             Visible = false;
             Location = new Vector2(100,100);
         }
@@ -29,12 +31,20 @@ namespace Game.Interface.Screens.GameGui
                 return;
             }
 
+
+            //draw the background
+            spriteBatch.Begin(SpriteSortMode.FrontToBack, BlendState.AlphaBlend, SamplerState.LinearWrap, DepthStencilState.Default, RasterizerState.CullNone);
+            spriteBatch.Draw(_texture, new Rectangle((int)Location.X, (int)Location.Y, 48, 14), new Color(0, 0, 0, 120)); //top part
+                spriteBatch.Draw(_texture, new Rectangle((int)Location.X, (int)Location.Y + 14, 48, (_options.Length * 15)), new Color(128, 128, 128, 150)); //bottem part
+            spriteBatch.End();
+
             //draw the text
             spriteBatch.Begin();
                 for (var i = 0; i < _options.Length; i++)
                 {
-                    var location = new Vector2(100, 100 + (i * 20));
-                    spriteBatch.DrawString(_font, _options[i], location, Color.Black);
+                    var location = new Vector2((int)Location.X, (int)Location.Y + (i * 15) + 14);
+                    spriteBatch.DrawString(_font, "Options", new Vector2((int)Location.X, (int)Location.Y), Color.White); //top part
+                    spriteBatch.DrawString(_font, _options[i], location, Color.Black); //bottem part
                 }
             spriteBatch.End();
         }
@@ -56,6 +66,17 @@ namespace Game.Interface.Screens.GameGui
         }
 
         public Vector2 Location { get; private set; }
-        public bool Visible { get;  set; }
+        public bool Visible { get; private set; }
+
+        public void ShowMenu(float x, float y)
+        {
+            Location = new Vector2(x,y);
+            Visible = true;
+        }
+
+        public void HideMenu()
+        {
+            Visible = false;
+        }
     }
 }

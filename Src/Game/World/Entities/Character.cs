@@ -46,6 +46,7 @@ namespace Game.World.Entities
         {
             _currentMouseState = Mouse.GetState();
 
+            //check to see if hero has been clicked
             if (_currentMouseState.LeftButton == ButtonState.Released && _prevMouseState.LeftButton == ButtonState.Pressed)
             {
                 if (_collision.Contains(_currentMouseState.X, _currentMouseState.Y))

@@ -24,9 +24,9 @@ namespace Game.Interface.Controls
         private MouseState _currentMouseState;
         private MouseState _prevMouseState;
 
-        public TextBox(Texture2D texture, Rectangle position, ContentManager content, Color color)
+        public TextBox(Rectangle position, ContentManager content, Color color)
         {
-            _texture = texture;
+            _texture = content.Load<Texture2D>("Button");
             _position = position;
             _font = content.Load<SpriteFont>("ControlFont");
             _color = color;
