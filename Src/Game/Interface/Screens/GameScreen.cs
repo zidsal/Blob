@@ -1,5 +1,6 @@
 ﻿using Game.Interface.Screens.GameGui;
 using Game.World;
+using Game.World.Entities;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -29,7 +30,10 @@ namespace Game.Interface.Screens
             _playerMenu = new InteractionMenu(_playerMenuOptions, content);
 
             //give the heros there onclick interaction
-            _world.GetPlayer().OnClickEvent += PlayerInteraction;
+            foreach(var hero in _world.GetPlayerHeroes())
+            {
+                hero.OnClickEvent += PlayerInteraction;
+            }
         }
 
         public void Update(GameTime gameTime)
@@ -54,7 +58,7 @@ namespace Game.Interface.Screens
             _playerMenu.Draw(spriteBatch);
         }
 
-        private void PlayerInteraction()
+        private void PlayerInteraction(Character character)
         {
             if(_playerMenu.Visible)
             {
@@ -62,7 +66,7 @@ namespace Game.Interface.Screens
             }
             else
             {
-                _playerMenu.ShowMenu(0,0);
+                _playerMenu.ShowMenu(character.Location.X + 24, character.Location.Y);
             }
         }
     }

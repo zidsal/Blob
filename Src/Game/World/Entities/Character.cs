@@ -18,8 +18,8 @@ namespace Game.World.Entities
         private Rectangle _collision;
 
         //for onclick stuff
-        public delegate void Click();
-        public event Button.Click OnClickEvent;
+        public delegate void Click(Character sender);
+        public event Click OnClickEvent;
         private MouseState _currentMouseState;
         private MouseState _prevMouseState;
 
@@ -76,7 +76,7 @@ namespace Game.World.Entities
         {
             if(OnClickEvent != null)
             {
-                OnClickEvent();
+                OnClickEvent(this);
             }
         }
 

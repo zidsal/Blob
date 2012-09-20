@@ -1,4 +1,5 @@
-﻿using Game.World.Entities;
+﻿using System.Collections.Generic;
+using Game.World.Entities;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -31,26 +32,37 @@ namespace Game.World
   </PassiveAbilitites>
 </Identity>";
        #endregion
-        private readonly Hero _player = new Hero(new Vector2(32,32), _xml);
+       private readonly List<Hero> _playerHeroes = new List<Hero>();
 
         public void Initialize(ContentManager content)
         {
-            _player.Initialize(content);
+            _playerHeroes.Add(new Hero(new Vector2(32, 32), _xml));
+
+            foreach (var hero in _playerHeroes)
+            {
+                hero.Initialize(content);
+            }
         }
 
         public void Update(GameTime gameTime)
         {
-            _player.Update(gameTime);
+            foreach (var hero in _playerHeroes)
+            {
+                hero.Update(gameTime);
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            _player.Draw(spriteBatch);
+            foreach (var hero in _playerHeroes)
+            {
+                hero.Draw(spriteBatch);
+            }
         }
 
-       public Hero GetPlayer()
+       public List<Hero> GetPlayerHeroes()
        {
-           return _player;
+           return  _playerHeroes;
        }
     }
 }
