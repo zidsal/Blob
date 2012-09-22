@@ -13,7 +13,8 @@ namespace Game.Interface.Screens.GameGui
     {
         private readonly SpriteFont _font;
         private readonly string[] _options;
-        private Texture2D _texture;
+        private readonly Texture2D _texture;
+        private readonly int _MenuLength = 48;
 
         public InteractionMenu(String[] options, ContentManager content)
         {
@@ -22,6 +23,7 @@ namespace Game.Interface.Screens.GameGui
             _texture = content.Load<Texture2D>("Button");
             Visible = false;
             Location = new Vector2(100,100);
+            _MenuLength = (int)_font.MeasureString(FindLongestWord(_options)).X + 2;
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -31,11 +33,10 @@ namespace Game.Interface.Screens.GameGui
                 return;
             }
 
-
             //draw the background
             spriteBatch.Begin(SpriteSortMode.FrontToBack, BlendState.AlphaBlend, SamplerState.LinearWrap, DepthStencilState.Default, RasterizerState.CullNone);
-            spriteBatch.Draw(_texture, new Rectangle((int)Location.X, (int)Location.Y, 48, 14), new Color(0, 0, 0, 120)); //top part
-                spriteBatch.Draw(_texture, new Rectangle((int)Location.X, (int)Location.Y + 14, 48, (_options.Length * 15)), new Color(128, 128, 128, 150)); //bottem part
+                spriteBatch.Draw(_texture, new Rectangle((int)Location.X, (int)Location.Y, _MenuLength, 14), new Color(0, 0, 0, 120)); //top part
+                spriteBatch.Draw(_texture, new Rectangle((int)Location.X, (int)Location.Y + 14, _MenuLength, (_options.Length * 15)), new Color(128, 128, 128, 150)); //bottem part
             spriteBatch.End();
 
             //draw the text
@@ -77,6 +78,18 @@ namespace Game.Interface.Screens.GameGui
         public void HideMenu()
         {
             Visible = false;
+        }
+
+        private static string FindLongestWord (IEnumerable<string> words)
+        {
+            var longest = "";
+
+            foreach (var word in words.Where(word => word.Length > longest.Length))
+            {
+                longest = word;
+            }
+
+            return longest;
         }
     }
 }

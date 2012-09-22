@@ -15,7 +15,7 @@ namespace Game.Interface.Screens
         private readonly InputManager _input = new InputManager();
         private readonly GameWorld _world = new GameWorld();
         private InteractionMenu _playerMenu;
-        private readonly string[] _playerMenuOptions = {"Move", "Attack", "Info", "Cancel"};
+        private readonly string[] _playerMenuOptions = { "Move", "Attack", "Abilities", "Cancel" };
 
         public GameScreen(Game game, ScreenManager screen)
         {
@@ -29,7 +29,7 @@ namespace Game.Interface.Screens
             _world.Initialize(content);
             _playerMenu = new InteractionMenu(_playerMenuOptions, content);
 
-            //give the heros there onclick interaction
+            //give the heros there onclick interaction with the interactionMenu
             foreach(var hero in _world.GetPlayerHeroes())
             {
                 hero.OnClickEvent += PlayerInteraction;
