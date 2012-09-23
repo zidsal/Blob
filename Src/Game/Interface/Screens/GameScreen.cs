@@ -15,7 +15,7 @@ namespace Game.Interface.Screens
         private readonly InputManager _input = new InputManager();
         private readonly GameWorld _world = new GameWorld();
         private InteractionMenu _playerMenu;
-        private readonly string[] _playerMenuOptions = { "Move", "Attack", "Abilities", "Cancel" };
+        private readonly string[] _playerMenuOptions = { "Move", "Attack", "Abilities", "Cancel","foo","bar","baz" };
 
         public GameScreen(Game game, ScreenManager screen)
         {
