@@ -34,11 +34,14 @@ namespace Game.Interface.Screens
             {
                 hero.OnClickEvent += PlayerInteraction;
             }
+
+            _playerMenu.OnClickEvent += MenuInteraction;
         }
 
         public void Update(GameTime gameTime)
         {
             _input.Update(Keyboard.GetState());
+            _playerMenu.Update(gameTime);
             _world.Update(gameTime);
         }
 
@@ -68,6 +71,11 @@ namespace Game.Interface.Screens
             {
                 _playerMenu.ShowMenu(character.Location.X + 24, character.Location.Y);
             }
+        }
+
+        private static void MenuInteraction(InteractionMenuEventArgs e)
+        {
+            System.Console.WriteLine(e.Option);
         }
     }
 }

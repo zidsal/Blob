@@ -107,11 +107,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Src\GameContent\GameContent.contentproj">
-      <Project>{1A59A2DA-869F-452B-B475-A123AA735062}</Project>
-      <Name>GameContent %28Content%29</Name>
-      <XnaReferenceType>Content</XnaReferenceType>
-    </ProjectReference>
     <ProjectReference Include="..\Src\Game\Game.csproj">
       <Project>{BD6CFB83-531A-4559-9EEA-509EC129F5BF}</Project>
       <Name>Game</Name>
