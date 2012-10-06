@@ -13,7 +13,7 @@ namespace Game.Interface.Screens
     public class MainMenu : IScreen
     {
         private Button[] _buttons;
-        private static readonly string[] BtnName = {"Login", "Register", "Options", "Exit"};
+        private static readonly string[] BtnName = {"Watch", "Create", "Options", "Exit"};
         private readonly Game _game;
         private readonly ScreenManager _screen;
         private readonly NewsReader _news = new NewsReader();
@@ -53,7 +53,7 @@ namespace Game.Interface.Screens
 
         private void AddEventListernToControl()
         {
-            _buttons[0].OnClickEvent += Login;
+            _buttons[0].OnClickEvent += Watch;
             _buttons[3].OnClickEvent += _game.Exit;
         }
 
@@ -84,10 +84,9 @@ namespace Game.Interface.Screens
             }
         }
 
-        private void Login()
+        private void Watch()
         {
-            _screen.SwapScreen(new LoginScreen(_game,_screen));
+            _screen.SwapScreen(new GameScreen(_game, _screen));
         }
-
     }
 }

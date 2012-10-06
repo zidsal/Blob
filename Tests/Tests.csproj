@@ -107,9 +107,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Src\Game\Game.csproj">
+    <ProjectReference Include="..\Src\Game\BlobClient.csproj">
       <Project>{BD6CFB83-531A-4559-9EEA-509EC129F5BF}</Project>
-      <Name>Game</Name>
+      <Name>BlobClient</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

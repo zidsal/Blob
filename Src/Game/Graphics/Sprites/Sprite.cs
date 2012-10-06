@@ -12,10 +12,10 @@ namespace Game.Graphics.Sprites
             _spriteTexture = texture;
         }
 
-        public void Draw(SpriteBatch spriteBatch, Vector2 location,Rectangle part, float size)
+        public void Draw(SpriteBatch spriteBatch, Vector2 location,Rectangle part, float size, Color color)
         {
             spriteBatch.Begin();
-                spriteBatch.Draw(_spriteTexture, location, part, Color.White, 0f, Vector2.Zero, size, SpriteEffects.None, 0f);
+                spriteBatch.Draw(_spriteTexture, location, part, color, 0f, Vector2.Zero, size, SpriteEffects.None, 0f);
             spriteBatch.End();
         }
     }

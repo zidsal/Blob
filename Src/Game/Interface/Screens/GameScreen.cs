@@ -14,8 +14,10 @@ namespace Game.Interface.Screens
         private readonly ScreenManager _screen;
         private readonly InputManager _input = new InputManager();
         private readonly GameWorld _world = new GameWorld();
-        private InteractionMenu _playerMenu;
-        private readonly string[] _playerMenuOptions = { "Move", "Attack", "Abilities", "Cancel","foo","bar","baz" };
+
+        //player menu gui control
+        private InteractionMenu _blobMenu;
+        private readonly string[] _blobMenuOptions = { "Inspect", "Cancel"};
 
         public GameScreen(Game game, ScreenManager screen)
         {
@@ -27,21 +29,21 @@ namespace Game.Interface.Screens
         public void Initialize(ContentManager content)
         {
             _world.Initialize(content);
-            _playerMenu = new InteractionMenu(_playerMenuOptions, content);
+            _blobMenu = new InteractionMenu(_blobMenuOptions, content);
 
             //give the heros there onclick interaction with the interactionMenu
-            foreach(var hero in _world.GetPlayerHeroes())
+            foreach(var blob in _world.GetBlobs())
             {
-                hero.OnClickEvent += PlayerInteraction;
+                blob.OnClickEvent += PlayerInteraction;
             }
 
-            _playerMenu.OnClickEvent += MenuInteraction;
+            _blobMenu.OnClickEvent += MenuInteraction;
         }
 
         public void Update(GameTime gameTime)
         {
             _input.Update(Keyboard.GetState());
-            _playerMenu.Update(gameTime);
+            _blobMenu.Update(gameTime);
             _world.Update(gameTime);
         }
 
@@ -58,24 +60,27 @@ namespace Game.Interface.Screens
 
         private void DrawUi(SpriteBatch spriteBatch)
         {
-            _playerMenu.Draw(spriteBatch);
+            _blobMenu.Draw(spriteBatch);
         }
 
-        private void PlayerInteraction(Character character)
+        private void PlayerInteraction(Skeleton skeleton)
         {
-            if(_playerMenu.Visible)
+            if(_blobMenu.Visible)
             {
-                _playerMenu.HideMenu();
+                _blobMenu.HideMenu();
             }
             else
             {
-                _playerMenu.ShowMenu(character.Location.X + 24, character.Location.Y);
+                _blobMenu.ShowMenu(skeleton.Location.X + 24, skeleton.Location.Y);
             }
         }
 
-        private static void MenuInteraction(InteractionMenuEventArgs e)
+        private void MenuInteraction(InteractionMenuEventArgs e)
         {
-            System.Console.WriteLine(e.Option);
+            if (e.Option == _blobMenuOptions[3])
+            {
+                _blobMenu.HideMenu();
+            }
         }
     }
 }

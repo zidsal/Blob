@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
+﻿using System.Xml.Serialization;
 
 namespace Game.World.Entities
 {
@@ -9,31 +7,23 @@ namespace Game.World.Entities
     {
         public string Name { get; set; }
         public string Texture { get; set; }
-        public string HeroType { get; set; }
-
+        public string Info { get; set; }
         public Stats Stats { get; set; }
-        public ActiveAbilitites ActiveAbilitites { get; set; }
-        public PassiveAbilitites PassiveAbilitites { get; set; }
-    }
-
-    public class ActiveAbilitites
-    {
-        [XmlElement("AbilityId")]
-        public List<int> ActiveAbilitiesId { get; set; }
-    }
-
-    public class PassiveAbilitites
-    {
-        [XmlElement("AbilityId")]
-        public List<int> PassiveAbilitiesId { get; set; }
+        public Rgb Rgb { get; set; }
     }
 
     public class Stats
     {
         public int Health { get; set; }
-        public int MagicDamage { get; set; }
-        public int PhysicalDamage { get; set; }
+        public int Damage { get; set; }
         public int Defense { get; set; }
+    }
+
+    public class Rgb
+    {
+        public int Red { get; set; }
+        public int Green { get; set; }
+        public int Blue { get; set; }
     }
 
 }
